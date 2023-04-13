@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+
 public class DatabaseNode extends Thread {
     private HashMap<String, String> database;
     private ServerSocket serverSocket;
@@ -65,11 +66,11 @@ public class DatabaseNode extends Thread {
                     record = args[i+1];
                 }
             }
-            if(port == 0) {
+            if (port == 0) {
                 System.out.println("No value for -tcpport argument");
                 return;
             }
-            if(record.isEmpty()) {
+            if (record.isEmpty()) {
                 System.out.println("No value for -record argument");
                 return;
             }
@@ -83,8 +84,8 @@ public class DatabaseNode extends Thread {
         String value = keyValue[1];
 
         DatabaseNode node = new DatabaseNode(port, key, value);
-        for(int i = 2; i < args.length; i++){
-            if(args[i].startsWith("-connect")){
+        for (int i = 2; i < args.length; i++){
+            if (args[i].startsWith("-connect")){
                 String[] hostAndPort = args[i].substring(args[i].indexOf("-connect ") + 8).split(":");
                 String host = hostAndPort[0];
                 int connectPort = Integer.parseInt(hostAndPort[1]);
