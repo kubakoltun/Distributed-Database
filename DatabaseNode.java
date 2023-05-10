@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-
 public class DatabaseNode extends Thread {
     private HashMap<String, String> database;
     private ServerSocket serverSocket;
